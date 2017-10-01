@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'profiles',
     'catalogo',
     'producto',
+    'contacto',
 ]
 
 MIDDLEWARE = [

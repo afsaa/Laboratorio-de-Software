@@ -30,11 +30,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+        {% url 'Contacto' as contacto %}        
         <li class="active"><a href="#">Home</a></li>
         <li><a href="#">Productos</a></li>
         <li><a href="#">Ofertas</a></li>
         <li><a href="#">Tiendas</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li {% if request.path == Contacto %} class="active" {% endif %}><a href="{% url 'contacto' %}">Contacto</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Cuenta</a></li>
