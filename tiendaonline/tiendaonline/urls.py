@@ -18,12 +18,17 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from django.contrib import admin
 
+from contacto import views as contact_views
 from producto import views
 from catalogo import views
-from profiles import views
+from profiles import views 
+ 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.home, name='home')
+    url(r'^contacto/$', contact_views.contacto, name='contacto'),
+    url(r'^$', views.home, name='home'),  
+    
 ]
 
 
