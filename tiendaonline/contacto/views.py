@@ -23,6 +23,6 @@ def contacto(request):
 		title="Gracias !"
 		confirm_message ="El mensaje ha sido enviado, te lo responderemos en breve. gracias por tu paciencia."
 		context = {'title': title, 'confirm_message':confirm_message, }
-	
-	template = 'contacto.html'
+
+	template = 'contacto\contacto.html'
 	return render(request,template,context)

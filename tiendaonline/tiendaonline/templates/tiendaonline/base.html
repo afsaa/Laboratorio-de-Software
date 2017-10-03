@@ -1,4 +1,4 @@
-{% load static %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="{% static 'profiles/style.css' %}">
+  <link rel="stylesheet" href="{% static 'tiendaonline/style.css' %}">
 </head>
 <body>
 
@@ -80,38 +80,13 @@
 
     </div>
   </div>
-<!-- Contenido Ofertas -->
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Oferta Babydoll</div>
-        <div class="panel-body"><img src="{% static 'img/promo-babydoll.jpg' %}" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">50% de descuento</div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-danger">
-        <div class="panel-heading">Oferta Juguetes</div>
-        <div class="panel-body"><img src="{% static 'img/promo-juguetes.jpg' %}" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">30% de descuento</div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-success">
-        <div class="panel-heading">Oferta Lencería</div>
-        <div class="panel-body"><img src="{% static 'img/promo-lenceria.jpg' %}" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Compra uno y lleva un descuento de 50% en el segundo</div>
-      </div>
-    </div>
-  </div>
-</div><br>
-<br><br>
-
-<!-- Pie de página -->
-<footer class="container-fluid text-center">
-  <p>Online Store Copyright</p>
-</footer>
+  <!-- Bloque de contenido -->
+  {% block content %}
+  {% endblock %}
+  <!-- Pie de página -->
+  <footer class="container-fluid text-center">
+    <p>Online Store Copyright</p>
+  </footer>
 
 </body>
 </html>
