@@ -6,11 +6,11 @@
   <h1>{{ title }}</h1>
   <div class="form-group">
     {% if confirm_message %}
-    <p> {{confirm_message}} </p>
+      <p> {{confirm_message}} </p>
     {% endif %}
 
     {% if form %}
-    <form method='POST' action='' required>{% csrf_token %}
+      <form method='POST' action='' required>{% csrf_token %}
     {{ form.as_p }}
   </div>
   <input type='submit' value='Enviar' class='btn btn-success' />
