@@ -1,0 +1,21 @@
+{% extends 'contacto/base.html' %}
+
+{% block content %}
+<!-- Contenido Contacto-->
+<div class="container">
+  <h1>{{ title }}</h1>
+  <div class="form-group">
+    {% if confirm_message %}
+      <p> {{confirm_message}} </p>
+    {% endif %}
+
+    {% if form %}
+      <form method='POST' action='' required>{% csrf_token %}
+    {{ form.as_p }}
+  </div>
+  <input type='submit' value='Enviar' class='btn btn-success' />
+  </form>
+</div>
+{% endif %}
+<br>
+{%endblock%}

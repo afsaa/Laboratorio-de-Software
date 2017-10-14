@@ -1,0 +1,31 @@
+{% extends 'profiles/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Contenido Ofertas -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Oferta Babydoll</div>
+        <div class="panel-body"><img src="{% static 'img/promo-babydoll.jpg' %}" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">50% de descuento</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-danger">
+        <div class="panel-heading">Oferta Juguetes</div>
+        <div class="panel-body"><img src="{% static 'img/promo-juguetes.jpg' %}" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">30% de descuento</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-success">
+        <div class="panel-heading">Oferta Lencería</div>
+        <div class="panel-body"><img src="{% static 'img/promo-lenceria.jpg' %}" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Compra uno y lleva un descuento de 50% en el segundo</div>
+      </div>
+    </div>
+  </div>
+</div><br>
+<br><br>
+{% endblock %}
