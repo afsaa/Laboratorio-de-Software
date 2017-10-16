@@ -1,0 +1,22 @@
+{% extends "account/base.html" %}
+
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Registro" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Registro" %}</h1>
+
+<p>{% blocktrans %}Ya tienes una cuenta de usuario? Si es asi por favor <a href="{{ login_url }}">ingresa</a>.{% endblocktrans %}</p>
+
+<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+  {% bootstrap_form form  %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <button type="submit" class="btn btn-success">{% trans "Registrarse" %} &raquo;</button>
+</form>
+
+{% endblock %}

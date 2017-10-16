@@ -1,0 +1,22 @@
+{% extends "account/base.html" %}
+
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Cerrar Sesión" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Cerrar Sesión" %}</h1>
+
+<p>{% trans 'Estás seguro que quieres cerrar sesión?' %}</p>
+
+<form method="post" action="{% url 'account_logout' %}">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button type="submit" class="btn btn-success">{% trans 'Cerrar Sesión' %}</button>
+</form>
+
+
+{% endblock %}

@@ -32,18 +32,24 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         {% url 'Contacto' as contacto %}
-        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+        <li class="active"><a href="#">Home</a></li>
         <li><a href="#">Productos</a></li>
         <li><a href="#">Ofertas</a></li>
         <li><a href="#">Tiendas</a></li>
         <li {% if request.path == Contacto %} class="active" {% endif %}><a href="{% url 'contacto' %}">Contacto</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a data-toggle="modal" href="#myModal"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+        {% if user.is_authenticated %}
+        {% load account %}
+          <li><a href="/accounts/logout"><span class="glyphicon glyphicon-user"></span> {% user_display user %}</a></li>
+        {% else %}
+          <li><a href="/accounts/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+        {% endif %}
       </ul>
     </div>
   </div>
 </nav>
+
 <!-- Modal Login-->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -55,24 +61,24 @@
           <h4><span class="glyphicon glyphicon-log-in center"></span> Login</h4>
         </div>
         <div class="modal-body">
-          <form role="form">
+          <form role="form" class="login" method="POST" action="accounts/login/">
             <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Usuario</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Introduzca el correo">
+              <label for="id_login"><span class="glyphicon glyphicon-user"></span> Usuario</label>
+              <input type="text" name="login" autofocus="autofocus" class="form-control" id="id_login" required placeholder="Usuario o correo">
             </div>
             <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Contraseña</label>
-              <input type="password" class="form-control" id="psw" placeholder="Introduzca la contraseña">
+              <label for="id_password"><span class="glyphicon glyphicon-eye-open"></span> Contraseña</label>
+              <input type="password" name="password" class="form-control" id="id_password"  required placeholder="Contraseña">
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Recuerdame</label>
+              <label for="id_remember"><input type="checkbox" name="remember" id="id_remember">Recuerdame</label>
             </div>
-              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-log-in"></span> Ingresar</button>
+              <button type="submit" class="btn btn-success btn-block primaryAction"><span class="glyphicon glyphicon-log-in"></span> Ingresar</button>
           </form>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
-          <p>No eres miembro? <a href="#">Registrate</a></p>
+          <p>No eres miembro? <a href="/accounts/signup/">Registrate</a></p>
           <p>Olvidaste tu <a href="#">Contraseña?</a></p>
         </div>
       </div>

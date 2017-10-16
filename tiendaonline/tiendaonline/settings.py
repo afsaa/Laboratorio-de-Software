@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap3',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -143,9 +144,9 @@ if DEBUG:
     MEDIA_URL= '/media/'
     STATIC_ROOT= os.path.join(os.path.dirname(BASE_DIR), "static", "static-only")
     MEDIA_ROOT= os.path.join(os.path.dirname(BASE_DIR), "static", "media")
-    STATICFILES_DIRS= (    
+    STATICFILES_DIRS= (
     os.path.join(os.path.dirname(BASE_DIR), "static", "static"),
-   ) 
+   )
 
 SITE_ID = 1
 
@@ -177,4 +178,3 @@ ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = False
 ACCOUNT_PASSWORD_MIN_LENGTH = 6
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
-
