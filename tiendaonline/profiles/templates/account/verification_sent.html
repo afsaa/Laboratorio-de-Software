@@ -1,0 +1,12 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Verificación de correo" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Verificación de correo" %}</h1>
+
+    <p>{% blocktrans %}Te hemos enviado un correo de verificación. Sigue el enlace proporcionado para terminar el registro. Por favor contáctanos si no recibes el correo en unos minutos.{% endblocktrans %}</p>
+
+{% endblock %}
