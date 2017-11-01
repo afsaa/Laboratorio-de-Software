@@ -23,7 +23,7 @@ from producto import views
 from catalogo import views
 from profiles import views 
  
-
+#URL´S necesarias para la aplicacion
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^contacto/$', contact_views.contacto, name='contacto'),
