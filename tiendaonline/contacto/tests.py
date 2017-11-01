@@ -8,7 +8,7 @@ from contacto.models import contact
 # Create your tests here.
 class Testcontacto(TestCase):
     def test_contact_str(self):
-        mycontact = contact(nombre='Chérer')
+        mycontact = contact(nombre='Cheerer')
         self.assertEqual(str(mycontact), 'Chérer'.encode('utf8'))
 
     def test_contact_str1(self):
