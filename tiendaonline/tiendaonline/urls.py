@@ -20,16 +20,18 @@ from django.contrib import admin
 
 from contacto import views as contact_views
 from producto import views
+from Servicios import views as servicios_views
 from catalogo import views
 from profiles import views 
+
  
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^contacto/$', contact_views.contacto, name='contacto'),
-    url(r'^$', views.home, name='home'),  
-    url(r'^accounts/', include('allauth.urls')),
-    
+	url(r'^admin/', admin.site.urls),
+	url(r'^contacto/$', contact_views.contacto, name='contacto'),
+	url(r'^Servicios/$', servicios_views.Servicios, name='Servicios'),
+	url(r'^$', views.home, name='home'),  
+	url(r'^accounts/', include('allauth.urls')),
 ]
 
 

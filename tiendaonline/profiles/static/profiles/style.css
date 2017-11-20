@@ -25,5 +25,11 @@ footer {
 }
 
 .modal-body{
+  
   padding:40px 50px;
+}
+
+.hero {
+  background-color: #2ba6cb;
+  padding: 0 90px;
 }
