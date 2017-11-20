@@ -37,6 +37,8 @@
         <li><a href="#">Ofertas</a></li>
         <li><a href="#">Tiendas</a></li>
         <li {% if request.path == Contacto %} class="active" {% endif %}><a href="{% url 'contacto' %}">Contacto</a></li>
+        <li {% if request.path == Email %} class="active" {% endif %}><a href="{% url 'email' %}">Email</a></li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {% if user.is_authenticated %}

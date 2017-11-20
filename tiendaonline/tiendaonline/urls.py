@@ -23,13 +23,13 @@ from producto import views
 from catalogo import views
 from profiles import views 
  
-#URL´S necesarias para la aplicacion
+#URLS necesarias para la aplicacion
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^contacto/$', contact_views.contacto, name='contacto'),
     url(r'^$', views.home, name='home'),  
     url(r'^accounts/', include('allauth.urls')),
-    
+    url(r'^email/$', contact_views.email, name='email'),
 ]
 
 

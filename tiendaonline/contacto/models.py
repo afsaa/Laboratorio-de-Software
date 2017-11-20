@@ -13,5 +13,15 @@ class contact(models.Model):
 	def __unicode__(self):
 		return self.nombre
 
+class email(models.Model):
+	email = models.EmailField(blank=False, validators=[EmailValidator(message="Ingresa un email valido")], default='description email')
+	comentario = models.TextField(default='description default text')
+
+	def __unicode__(self):
+		return self.email
+
+
+
+
 		
 
