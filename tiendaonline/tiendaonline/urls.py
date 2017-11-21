@@ -21,15 +21,17 @@ from django.contrib import admin
 from contacto import views as contact_views
 from producto import views
 from catalogo import views
-from profiles import views 
- 
-#URL´S necesarias para la aplicacion
+from profiles import views
+from servicios import views
+
+#URLS necesarias para la aplicacion
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^contacto/$', contact_views.contacto, name='contacto'),
-    url(r'^$', views.home, name='home'),  
+    url(r'^$', views.home, name='home'),
     url(r'^accounts/', include('allauth.urls')),
-    
+    url(r'^reporte/$', views.Reporte)
+
 ]
 
 
