@@ -19,18 +19,20 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from contacto import views as contact_views
+from profiles import views as profiles_views
 from producto import views
 from catalogo import views
-from profiles import views
-from servicios import views
+from servicios import views as servicios_views
 
 #URLS necesarias para la aplicacion
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^contacto/$', contact_views.contacto, name='contacto'),
-    url(r'^$', views.home, name='home'),
+    url(r'^servicios/$', servicios_views.Servicios, name='servicios'),
+    url(r'^$', profiles_views.home, name='home'),
     url(r'^accounts/', include('allauth.urls')),
-    url(r'^reporte/$', views.Reporte)
+    url(r'^reporte/$', servicios_views.Reporte),
+    url(r'^email/$', contact_views.email, name='email')  
 
 ]
 

@@ -20,6 +20,7 @@ EMAIL_HOST_USER = 'sexshoplab@gmail.com'
 EMAIL_HOST_PASSWORD = 'laboratorio123'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'sexshoplab@gmail.com'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'servicios',
 ]
 
 MIDDLEWARE = [

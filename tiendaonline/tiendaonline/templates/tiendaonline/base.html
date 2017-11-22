@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="{% static 'tiendaonline/style.css' %}">
+  <link rel="stylesheet" href="{% static 'profiles/style.css' %}">
+  <link rel="stylesheet" href="{% static 'servicios/style.css' %}">
 </head>
 <body>
 
@@ -32,11 +33,13 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         {% url 'Contacto' as contacto %}
-        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+        {% url 'Servicios' as servicios %}
+        <li class="active"><a href="#">Home</a></li>
         <li><a href="#">Productos</a></li>
         <li><a href="#">Ofertas</a></li>
         <li><a href="#">Tiendas</a></li>
         <li {% if request.path == Contacto %} class="active" {% endif %}><a href="{% url 'contacto' %}">Contacto</a></li>
+        <li {% if request.path == Servicios %} class="active" {% endif %}><a href="{% url 'servicios' %}">Servicios</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {% if user.is_authenticated %}
@@ -62,7 +65,6 @@
         </div>
         <div class="modal-body">
           <form role="form" class="login" method="POST" action="accounts/login/">
-            {% csrf_token %}
             <div class="form-group">
               <label for="id_login"><span class="glyphicon glyphicon-user"></span> Usuario</label>
               <input type="text" name="login" autofocus="autofocus" class="form-control" id="id_login" required placeholder="Usuario o correo">

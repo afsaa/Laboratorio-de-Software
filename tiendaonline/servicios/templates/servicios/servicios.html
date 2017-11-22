@@ -1,0 +1,42 @@
+{% extends 'Servicios/base.html' %}
+
+
+{% block content %}
+<!-- Contenido Contacto-->
+<br>  <br/>
+
+<h1>  <div class='hero'> &nbsp &nbsp &nbsp &nbsp{{title}} </div></h1>
+<br>  <br/>
+{% for producto in listaproductos %}
+<div class="row">
+	<div class='hero'>
+		<TABLE ALIGN=CENTER WIDTH=100% HEIGHT=20>
+		
+		<div class="info-block col-xs-12 col-sm-4">
+			<TD width=500   ALIGN=CENTER BGCOLOR="#D3D3D3">
+			{{producto.nombre}}
+			</TD>
+		</div>
+		
+		
+		<div class="info-block col-xs-12 col-sm-4">
+			<TD width=500   ALIGN=CENTER BGCOLOR="#D3D3D3">
+			{{producto.descripcion}}
+			</TD>
+		</div>
+		
+		<div class="info-block col-xs-12 col-sm-4">
+			<TD width=500   ALIGN=CENTER BGCOLOR="#D3D3D3">
+			{{producto.precio}}
+			</TD>
+		</div>
+		</TABLE>
+	</div>
+</div>
+
+
+{% endfor %}
+
+<br>  <br/>
+<br>  <br/>
+{%endblock%}
