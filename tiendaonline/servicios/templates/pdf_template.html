@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>Reporte Productos</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+    }
+  </style>
+</head>
+<body>
+  <h1>Reporte Productos</h1>
+  <br>
+  {% for producto in listaproductos %}
+  <div class="row">
+  	<div class="hero">
+  		<TABLE align=center width=100% height=20>
+
+  		<div class="info-block col-xs-12 col-sm-4">
+  			<TD width=500   align=center bgcolor="#D3D3D3">
+  			{{producto.nombre}}
+  			</TD>
+  		</div>
+
+  		<div class="info-block col-xs-12 col-sm-4">
+  			<TD width=500   align=center bgcolor="#D3D3D3">
+  			{{producto.descripcion}}
+  			</TD>
+  		</div>
+
+  		<div class="info-block col-xs-12 col-sm-4">
+  			<TD width=500   align=center bgcolor="#D3D3D3">
+  			{{producto.precio}}
+  			</TD>
+  		</div>
+  		</TABLE>
+  	</div>
+  </div>
+  {% endfor %}
+<br>
+</body>
+</html>

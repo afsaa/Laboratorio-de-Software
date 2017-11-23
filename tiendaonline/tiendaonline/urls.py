@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django_pdfkit import PDFView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url, include
@@ -31,8 +32,9 @@ urlpatterns = [
     url(r'^servicios/$', servicios_views.Servicios, name='servicios'),
     url(r'^$', profiles_views.home, name='home'),
     url(r'^accounts/', include('allauth.urls')),
-    url(r'^reporte/$', servicios_views.Reporte),
-    url(r'^email/$', contact_views.email, name='email')  
+    #url(r'^reporte/$', servicios_views.Reporte, name='reporte_pdf'),
+    url(r'^reporte/$', PDFView.as_view(template_name='pdf_template.html'), name='reporte_pdf'),
+    url(r'^email/$', contact_views.email, name='email')
 
 ]
 
