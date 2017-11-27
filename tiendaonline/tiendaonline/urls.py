@@ -32,8 +32,8 @@ urlpatterns = [
     url(r'^servicios/$', servicios_views.Servicios, name='servicios'),
     url(r'^$', profiles_views.home, name='home'),
     url(r'^accounts/', include('allauth.urls')),
-    #url(r'^reporte/$', servicios_views.Reporte, name='reporte_pdf'),
-    url(r'^reporte/$', PDFView.as_view(template_name='pdf_template.html'), name='reporte_pdf'),
+    url(r'^reporte/$', servicios_views.Reporte, name='reporte_pdf'),
+    #url(r'^reporte/$', PDFView.as_view(template_name='pdf_template.html'), name='reporte_pdf'),
     url(r'^email/$', contact_views.email, name='email')
 
 ]

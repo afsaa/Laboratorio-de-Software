@@ -15,12 +15,21 @@ Temp_Path = os.path.realpath('.')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+#Parametros para correos
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'sexshoplab@gmail.com'
 EMAIL_HOST_PASSWORD = 'laboratorio123'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'sexshoplab@gmail.com'
+
+#Parametros para la base de datos
+DATABASE_ENGINE = 'sqlite3'
+DATABASE_NAME = 'C:\Users\ANDRES\Desktop\GitHub\Laboratorio-de-Software'
+DATABASE_USER = ''
+DATABASE_PASSWORD = ''
+DATABASE_HOST = ''
+DATABASE_PORT = ''
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -53,6 +62,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'servicios',
+    
 ]
 
 MIDDLEWARE = [

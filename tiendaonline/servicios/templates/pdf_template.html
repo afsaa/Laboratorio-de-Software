@@ -1,12 +1,5 @@
-<html>
-<head>
-  <title>Reporte Productos</title>
-  <style>
-    body {
-      background-color: #f7f7f7;
-    }
-  </style>
-</head>
+{% extends 'Servicios/base.html' %}
+{% block content %}
 <body>
   <h1>Reporte Productos</h1>
   <br>
@@ -15,19 +8,19 @@
   	<div class="hero">
   		<TABLE align=center width=100% height=20>
 
-  		<div class="info-block col-xs-12 col-sm-4">
+  		<div>
   			<TD width=500   align=center bgcolor="#D3D3D3">
   			{{producto.nombre}}
   			</TD>
   		</div>
 
-  		<div class="info-block col-xs-12 col-sm-4">
+  		<div>
   			<TD width=500   align=center bgcolor="#D3D3D3">
   			{{producto.descripcion}}
   			</TD>
   		</div>
 
-  		<div class="info-block col-xs-12 col-sm-4">
+  		<div>
   			<TD width=500   align=center bgcolor="#D3D3D3">
   			{{producto.precio}}
   			</TD>
@@ -38,4 +31,4 @@
   {% endfor %}
 <br>
 </body>
-</html>
+{%endblock%}
